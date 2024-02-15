@@ -1,0 +1,14 @@
+' VBA  Function to convert DateTime to only Date
+Public Function DateTime2Date(x As Variant) As Variant
+' x is the column that has date/time entries such as : 2/9/2024  4:05:43 PM
+' This function takes the value2 of the columns, make it integer, and returns it to the column
+
+    Dim i As Integer, tempval As Long
+    For i = LBound(x) To UBound(x)
+        tempval = x(i, 1)
+        x(i, 1) = Int(tempval)
+    Next
+    Stop
+    
+    DateTime2Date = x
+End Function
